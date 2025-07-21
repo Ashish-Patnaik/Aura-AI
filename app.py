@@ -16,13 +16,13 @@ nest_asyncio.apply()
 load_dotenv()
 
 # --- Configuration ---
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
-if not GEMINI_API_KEY:
+GEMINI_API = os.getenv('GEMINI_API_KEY')
+if not GEMINI_API:
     raise ValueError("GEMINI_API_KEY environment variable not set!")
 
 Model = "gemini-1.5-pro"
 
-GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{Model}:streamGenerateContent?key={GEMINI_API_KEY}&alt=sse"
+GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{Model}:streamGenerateContent?key={GEMINI_API}&alt=sse"
 FIXED_VOICE = "en-US-JennyNeural"
 SYSTEM_PROMPT = """
 You are "Aura," a friendly and helpful AI voice assistant. Keep your responses concise, natural, and to the point, as if you were speaking in a real conversation. Do not use markdown or formatting.
