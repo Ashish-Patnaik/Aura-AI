@@ -176,7 +176,14 @@
     function connectWebSocket() {
         if (websocket && websocket.readyState === WebSocket.OPEN) return;
 
-        websocket = new WebSocket(`ws://${window.location.host}/stream`);
+        const isSecure = window.location.protocol === 'https:';
+        // Use 'wss://' for secure connections, 'ws://' for insecure (local)
+        const socketProtocol = isSecure ? 'wss://' : 'ws://';
+        
+        const wsUrl = `${socketProtocol}${window.location.host}/stream`;
+        console.log(`Connecting to WebSocket at: ${wsUrl}`);
+    
+        websocket = new WebSocket(wsUrl);
         websocket.binaryType = 'arraybuffer';
 
         websocket.onopen = () => console.log("WebSocket connected and ready.");
