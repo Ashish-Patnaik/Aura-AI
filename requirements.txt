@@ -7,3 +7,4 @@ python-dotenv
 nest_asyncio
 gunicorn
 gevent
+aiohttp
