@@ -20,7 +20,7 @@ GEMINI_API = os.getenv('GEMINI_API_KEY')
 if not GEMINI_API:
     raise ValueError("GEMINI_API_KEY environment variable not set!")
 
-Model = "gemini-1.5-pro"
+Model = "gemini-2.0-flash"
 
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{Model}:streamGenerateContent?key={GEMINI_API}&alt=sse"
 FIXED_VOICE = "en-US-JennyNeural"
