@@ -20,7 +20,7 @@ GEMINI_API_KEY = "AIzaSyDpMYeR4fFAKrNfwe9EQrGN-1RqtGTlfh4"
 if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY environment variable not set! Please set it in your Render environment.")
 
-Model = "gemini-1.5-flash"
+Model = "gemini-2.0-flash"
 
 GEMINI_API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{Model}:streamGenerateContent?key={GEMINI_API_KEY}&alt=sse"
 FIXED_VOICE = "en-US-JennyNeural"
